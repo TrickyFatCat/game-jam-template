@@ -18,6 +18,16 @@ _global_script_class_icons={
 config/name="game-jam-template"
 config/icon="res://icon.png"
 
+[autoload]
+
+Utility="*res://singletons/Utility.gd"
+Events="*res://singletons/Events.gd"
+LevelController="*res://singletons/LevelController.gd"
+GameSaver="*res://singletons/GameSaver.gd"
+GameManager="*res://singletons/GameManager.gd"
+InputManager="*res://singletons/InputManager.gd"
+AudioPlayer="*res://singletons/AudioPlayer.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
