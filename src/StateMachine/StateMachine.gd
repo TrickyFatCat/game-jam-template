@@ -1,5 +1,5 @@
 tool
-class_name StateMachine, "res://assets/EngineIcons/icon_stateMachine.svg"
+class_name StateMachine, "res://assets/engine_icons/icon_stateMachine.svg"
 extends Node
 
 export(NodePath) var initial_state = NodePath()

@@ -1,6 +1,6 @@
 #* Base state class. Inherit all new states from this class
 
-class_name State, "res://assets/EngineIcons/icon_state.svg"
+class_name State, "res://assets/engine_icons/icon_state.svg"
 extends Node
 
 onready var stateMachine: Node = _get_state_machine(self)
