@@ -28,12 +28,24 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Entities/Player/Player.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/StateMachine/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
 "CameraController": "",
 "Entity": "",
-"Player": ""
+"Player": "",
+"State": "res://assets/engine_icons/icon_state.svg",
+"StateMachine": "res://assets/engine_icons/icon_stateMachine.svg"
 }
 
 [application]
@@ -50,6 +62,7 @@ GameSaver="*res://singletons/GameSaver.gd"
 GameManager="*res://singletons/GameManager.gd"
 InputManager="*res://singletons/InputManager.gd"
 AudioPlayer="*res://singletons/AudioPlayer.gd"
+TransitionScreen="*res://singletons/TransitionScreen/TransitionScreen.tscn"
 
 [rendering]
 
