@@ -21,6 +21,7 @@ signal menu_pause_closed()
 
 # Transition signals
 signal transition_screen_opened()
+signal transition_started()
 signal transition_screen_closed()
 
 # Game saver signals
