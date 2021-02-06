@@ -14,16 +14,33 @@ static func get_direction_to_player(target: Node2D) -> Vector2:
 
 
 static func get_distance_to_player(target: Node2D) -> float:
-    return get_player_position().distance_to(target.global_position)
-    
+	return get_player_position().distance_to(target.global_position)
+	
 
 func is_game_paused() -> bool:
-    return get_tree().paused
+	return get_tree().paused
 
 
 func pause_game() -> void:
-    get_tree().paused = true
+	get_tree().paused = true
 
 
 func unpause_game() -> void:
-    get_tree().paused = false
+	get_tree().paused = false
+
+#* Use this function to create timers
+#* If you need to create oneshot timer, use create_timer() function in yield()
+func create_new_timer(
+	parent,
+	duration : float = 1,
+	is_oneshot : bool = false,
+	is_autostarted : bool = false,
+	name : String = "Timer"
+	) -> Timer:
+	var new_timer = Timer.new();
+	parent.add_child(new_timer)
+	new_timer.wait_time = duration
+	new_timer.one_shot = is_oneshot
+	new_timer.autostart = is_autostarted
+	new_timer.name = name
+	return new_timer

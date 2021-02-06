@@ -11,4 +11,8 @@ func enter(msg: Dictionary = {}) -> void:
 
 
 func exit() -> void:
+	if TransitionScreen.target_state == TransitionScreen.state_opened:
+		Events.emit_signal("transition_screen_opened")
+	elif TransitionScreen.target_state == TransitionScreen.state_closed:
+		Events.emit_signal("transition_screen_closed")
 	return
