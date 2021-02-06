@@ -1,0 +1,2 @@
+class_name Entity
+extends KinematicBody2D
