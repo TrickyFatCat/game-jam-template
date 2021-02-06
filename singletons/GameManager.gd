@@ -7,7 +7,6 @@ const LEVEL_EXIT : String = "exit"
 const QUIT_GAME : String = "quit"
 
 var player : Player
-var objects_node : YSort
 var transition_command : String
 
 
