@@ -44,3 +44,12 @@ func create_new_timer(
 	new_timer.autostart = is_autostarted
 	new_timer.name = name
 	return new_timer
+
+
+func create_new_tween(
+	parent,
+	name : String = "Tween"
+) -> Tween:
+	var new_tween = Tween.new()
+	parent.add_child(new_tween)
+	return new_tween

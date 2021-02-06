@@ -22,19 +22,13 @@ func _on_DurationTimer_timeout() -> void:
 
 
 func _init() -> void:
-	_frequency_timer = Timer.new()
-	self.add_child(_frequency_timer)
-	_frequency_timer.name = "FrequencyTimer"
+	_frequency_timer = Utility.create_new_timer(self, 1, false, false, "FrequencyTimer")
 	_frequency_timer.connect("timeout", self, "_on_FrequencyTimer_timeout")
-	
-	_duration_timer = Timer.new()
-	self.add_child(_duration_timer)
-	_duration_timer.name = "DurationTimer"
-	_duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
 
-	_shake_tween = Tween.new()
-	_shake_tween.name = "ShakeTween"
-	self.add_child(_shake_tween)
+	_duration_timer = Utility.create_new_timer(self, 1, false, false, "DurationTimer")
+	_duration_timer.connect("timeout", self, "_on_DurationTimer_timeout")
+	
+	_shake_tween = Utility.create_new_tween(self, "ShakeTween")
 
 
 

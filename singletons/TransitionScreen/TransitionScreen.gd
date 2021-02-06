@@ -23,9 +23,7 @@ onready var state_transition: String = get_node("StateMachine/Transition").name
 
 
 func _init() -> void:
-	transitionTween = Tween.new()
-	self.add_child(transitionTween)
-	transitionTween.name = "TransitionTween"
+	transitionTween = Utility.create_new_tween(self, "TransitionTween")
 	transitionTween.connect("tween_all_completed", self, "_on_tween_completed")
 	transitionTween.connect("tween_step", self, "_on_tween_step")
 
