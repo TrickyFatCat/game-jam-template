@@ -1,7 +1,7 @@
 extends Node
 
 const MAIN_MENU_PATH : String = "res://levels/Menus/MainMenu.tscn"
-const LEVELS : Array 
+const LEVELS : Array = []
 
 var current_level : BaseLevel
 
