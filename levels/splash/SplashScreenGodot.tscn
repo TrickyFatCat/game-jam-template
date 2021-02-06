@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/splash_art/splash_godot.png" type="Texture" id=2]
 
 [node name="SplashScreenGodot" instance=ExtResource( 1 )]
-next_level = "res://levels/splash/SplashScreenJam.tscn"
 
 [node name="SplashImage" parent="." index="0"]
 texture = ExtResource( 2 )

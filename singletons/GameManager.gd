@@ -38,7 +38,7 @@ func _process_transition_command() -> void:
 			get_tree().quit()
 			pass
 		_:
-			LevelController.load_level_by_path(transition_command)
+			LevelController.load_level_by_id(int(transition_command))
 			pass
 
 
