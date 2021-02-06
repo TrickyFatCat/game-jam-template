@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 const MIN_CUTOFF: float = 0.0
@@ -17,8 +16,7 @@ var transitionTween : Tween
 var tween_progress : float
 
 onready var stateMachine: StateMachine = $StateMachine
-onready var screen: ColorRect = $ColorRect
-onready var screen_shader: ShaderMaterial = screen.material
+onready var screen_shader: ShaderMaterial = $ColorRect.material
 onready var state_opened: String = get_node("StateMachine/Opened").name
 onready var state_closed: String = get_node("StateMachine/Closed").name
 onready var state_transition: String = get_node("StateMachine/Transition").name
