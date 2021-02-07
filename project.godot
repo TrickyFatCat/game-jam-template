@@ -51,6 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="game-jam-template"
+run/main_scene="res://levels/splash/SplashScreenGodot.tscn"
 config/icon="res://icon.png"
 
 [autoload]
