@@ -36,7 +36,7 @@ func create_new_timer(
 	is_oneshot : bool = false,
 	is_autostarted : bool = false,
 	name : String = "Timer"
-	) -> Timer:
+) -> Timer:
 	var new_timer = Timer.new();
 	parent.add_child(new_timer)
 	new_timer.wait_time = duration
@@ -49,7 +49,13 @@ func create_new_timer(
 func create_new_tween(
 	parent,
 	name : String = "Tween"
-) -> Tween:
+ ) -> Tween:
 	var new_tween = Tween.new()
 	parent.add_child(new_tween)
 	return new_tween
+
+
+func create_lifespan_timer(parent, duration : float) -> Timer:
+	var lifespan_timer = create_new_timer(parent, duration, true, true, "LifespanTimer")
+	lifespan_timer.connect("timeout", parent, "queue_free")
+	return lifespan_timer
