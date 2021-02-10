@@ -24,6 +24,7 @@ func _init() -> void:
 func _on_fade_ended() -> void:
 	if playing and volume_factor == 0.0:
 		playing = false
+		emit_signal("music_finished")
 
 
 func play_track(track : AudioStream, fade_time : float = DEFAULT_FADE_TIME, track_volume : float = _default_volume) -> void:
@@ -34,6 +35,7 @@ func play_track(track : AudioStream, fade_time : float = DEFAULT_FADE_TIME, trac
 	
 	stream = track
 	playing = true
+	emit_signal("music_started")
 	_fade_in(fade_time)
 
 
