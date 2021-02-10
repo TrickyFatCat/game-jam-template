@@ -5,6 +5,8 @@ extends Node
 
 const LOAD_DEALAY_TIME : float = 0.5
 
+export(Array, AudioStream) var level_music := []
+
 
 func _init() -> void:
 	init()
