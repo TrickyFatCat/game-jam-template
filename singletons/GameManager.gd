@@ -5,6 +5,7 @@ const LEVEL_NEXT : String = "next"
 const LEVEL_RESTART : String = "restart"
 const LEVEL_EXIT : String = "exit"
 const QUIT_GAME : String = "quit"
+const MUSIC_FADE : float = 0.5
 
 var player : Player
 var transition_command : String
@@ -15,7 +16,7 @@ func _ready() -> void:
 	Events.connect("restart_level", self, "_start_level_restart")
 	Events.connect("quit_game", self, "_start_quitting_game")
 	Events.connect("transition_screen_closed", self, "_process_transition_command")
-	Events.connect("level_loaded", self, "_start_opening_screen")
+	Events.connect("level_loaded", self, "_on_level_loaded")
 	Events.connect("level_exit", self, "_start_exit_to_main_menu")
 
 
@@ -66,6 +67,20 @@ func _start_exit_to_main_menu() -> void:
 	TransitionScreen.start_transition()
 
 
-func _start_opening_screen() -> void:
+func _on_level_loaded() -> void:
 	TransitionScreen.start_transition()
-	pass
+	_start_playing_level_music()
+
+
+func _start_playing_level_music() -> void:
+	var music_tracks = get_tree().current_scene.level_music()
+	var track
+	
+	if music_tracks.size == 0:
+		return
+	elif music_tracks.size == 1:
+		track = music_tracks[0]
+	else:
+		track = music_tracks[randi() % music_tracks.size()]
+	
+	MusicPlayer.play_track(track, MUSIC_FADE)
