@@ -12,11 +12,17 @@ var transition_command : String
 
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	Events.connect("load_level", self, "_start_level_loading")
+# warning-ignore:return_value_discarded
 	Events.connect("restart_level", self, "_start_level_restart")
+# warning-ignore:return_value_discarded
 	Events.connect("quit_game", self, "_start_quitting_game")
+# warning-ignore:return_value_discarded
 	Events.connect("transition_screen_closed", self, "_process_transition_command")
+# warning-ignore:return_value_discarded
 	Events.connect("level_loaded", self, "_on_level_loaded")
+# warning-ignore:return_value_discarded
 	Events.connect("level_exit", self, "_start_exit_to_main_menu")
 
 
@@ -73,12 +79,12 @@ func _on_level_loaded() -> void:
 
 
 func _start_playing_level_music() -> void:
-	var music_tracks = get_tree().current_scene.level_music()
+	var music_tracks = get_tree().current_scene.level_music
 	var track
 	
-	if music_tracks.size == 0:
+	if music_tracks.size() == 0:
 		return
-	elif music_tracks.size == 1:
+	elif music_tracks.size() == 1:
 		track = music_tracks[0]
 	else:
 		track = music_tracks[randi() % music_tracks.size()]
