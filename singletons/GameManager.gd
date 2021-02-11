@@ -54,17 +54,17 @@ func _start_level_loading(msg: Dictionary = {}) -> void:
 
 func _start_quitting_game() -> void:
 	transition_command = QUIT_GAME
-	TransitionScreen.start_transition()
+	_on_level_change()
 
 
 func _start_level_restart() -> void:
 	transition_command = LEVEL_RESTART
-	TransitionScreen.start_transition()
+	_on_level_change()
 
 
 func _start_exit_to_main_menu() -> void:
 	transition_command = LEVEL_EXIT
-	TransitionScreen.start_transition()
+	_on_level_change()
 
 
 func _on_level_loaded() -> void:
@@ -84,3 +84,8 @@ func _start_playing_level_music() -> void:
 		track = music_tracks[randi() % music_tracks.size()]
 	
 	MusicPlayer.play_track(track, MUSIC_FADE)
+
+
+func _on_level_change() -> void:
+	TransitionScreen.start_transition()
+	MusicPlayer.stop_track(MUSIC_FADE)
