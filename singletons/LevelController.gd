@@ -8,7 +8,6 @@ const LEVELS : Array = [
 ]
 const MAIN_MENU_ID : int = 3
 
-var current_level : BaseLevel
 var current_level_id : int = 0
 
 
@@ -32,7 +31,7 @@ func load_next_level() -> void:
 		print_debug("last level")
 		load_main_menu()
 		return;
-	
+
 	get_tree().change_scene(LEVELS[new_level_id])
 	current_level_id += 1
 	pass
