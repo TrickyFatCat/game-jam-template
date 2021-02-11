@@ -7,7 +7,6 @@ const LEVELS : Array = [
 	"res://levels/splash/SplashScreenTeam.tscn"
 ]
 
-var current_level : BaseLevel
 var current_level_id : int = 0
 
 func load_level_by_id(id: int) -> void:
@@ -30,12 +29,6 @@ func load_next_level() -> void:
 		print_debug("last level")
 		load_main_menu()
 		return;
-	# if current_level.level_id > -1:
-	# 	var new_level_id = current_level.level_id + 1
-		
-	# 	if new_level_id >= LEVELS.size():
-	# 		load_main_menu()
-	# 		return
 
 	get_tree().change_scene(LEVELS[new_level_id])
 	pass

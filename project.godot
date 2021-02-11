@@ -64,6 +64,7 @@ GameManager="*res://singletons/GameManager.gd"
 InputManager="*res://singletons/InputManager.gd"
 AudioPlayer="*res://singletons/AudioPlayer.gd"
 TransitionScreen="*res://singletons/TransitionScreen/TransitionScreen.tscn"
+MusicPlayer="*res://singletons/MusicPlayer.gd"
 
 [rendering]
 
