@@ -52,6 +52,7 @@ func create_new_tween(
  ) -> Tween:
 	var new_tween = Tween.new()
 	parent.add_child(new_tween)
+	new_tween.name = name
 	return new_tween
 
 
