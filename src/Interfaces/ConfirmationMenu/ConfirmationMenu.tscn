@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Interfaces/BaseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Interfaces/TextButton/TextButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Interfaces/ConfirmationMenu/ConfirmationMenu.gd" type="Script" id=3]
 
 [node name="ConfirmationMenu" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="MenuLabel" parent="MenuBody/VBoxContainer" index="0"]
 margin_top = 77.0
