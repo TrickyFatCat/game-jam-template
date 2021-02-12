@@ -54,3 +54,4 @@ rect_min_size = Vector2( 385, 160 )
 mouse_filter = 2
 
 [node name="ConfirmationMenu" parent="." instance=ExtResource( 1 )]
+is_active = false

@@ -22,10 +22,13 @@ var _confirmation_menu : Control
 onready var _menu_body : CenterContainer = $MenuBody
 
 
-func _init() -> void:
-	_confirmation_menu = $ConfirmationMenu
-	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
-	_confirmation_menu.connect("no_pressed", self, "_decline_action")
+func _ready() -> void:
+	_set_menu_buttons()
+	ready()
+
+
+func ready() -> void:
+	pass
 
 
 func open_menu() -> void:
@@ -101,3 +104,10 @@ func _show_confirmation_menu(action_id: int) -> void:
 	_switch_menu_visibility(false)
 	_confirmation_menu.open_menu()
 	action_to_confirm = action_id
+
+
+# This method helps to avoid cyclic calls
+func _connect_to_confirmation_menu() -> void:
+	_confirmation_menu = $ConfirmationMenu
+	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
+	_confirmation_menu.connect("no_pressed", self, "_decline_action")

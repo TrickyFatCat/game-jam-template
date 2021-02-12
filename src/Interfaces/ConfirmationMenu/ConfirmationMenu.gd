@@ -6,8 +6,7 @@ signal yes_pressed
 signal no_pressed
 
 
-func _ready() -> void:
-	_set_menu_buttons()
+func ready() -> void:
 	get_button("Yes").connect("button_up", self, "_on_yes_pressed")
 	get_button("No").connect("button_up", self, "_on_no_pressed")
 

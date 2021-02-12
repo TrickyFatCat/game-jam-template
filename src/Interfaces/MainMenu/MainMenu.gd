@@ -3,15 +3,13 @@
 tool
 extends BaseMenu
 
-export(String, FILE, "*.tscn") var starting_level
 
-
-func _ready() -> void:
-	_set_menu_buttons()
+func ready() -> void:
 	_set_buttons_active(false)
 	Events.connect("transition_screen_opened", self, "_activate_menu")
 	get_button("ButtonStart").connect("button_up", self, "_on_button_start_pressed")
 	get_button("ButtonQuit").connect("button_up", self, "_on_button_quit_pressed")
+	_connect_to_confirmation_menu()
 
 
 func _on_button_start_pressed() -> void:
