@@ -6,6 +6,7 @@ onready var _game_over_menu : Control = $GameOverMenu
 onready var _finish_menu : Control = $FinishMenu
 
 
+
 func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
 		if TransitionScreen.is_transitionig():
@@ -16,7 +17,7 @@ func _notification(what: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	# TODO update pause controls
-	if event.is_action_pressed("ui_exit") and not TransitionScreen.is_transitionig():
+	if event.is_action_pressed("ui_cancel") and not TransitionScreen.is_transitionig():
 		if get_tree().paused:
 			_close_pause_menu()
 		else:
