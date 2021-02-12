@@ -2,9 +2,10 @@
 
 [ext_resource path="res://src/Interfaces/BaseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Interfaces/TextButton/TextButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Interfaces/ConfirmationMenu/ConfirmationMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Interfaces/PauseMenu/PauseMenu.gd" type="Script" id=3]
 
 [node name="PauseMenu" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="MenuLabel" parent="MenuBody/VBoxContainer" index="0"]
 text = "Pause"
@@ -25,5 +26,3 @@ margin_top = 48.0
 margin_right = 385.0
 margin_bottom = 68.0
 text = "EXIT"
-
-[node name="ConfirmationMenu" parent="." index="2" instance=ExtResource( 3 )]
