@@ -31,20 +31,21 @@ margin_right = 704.0
 margin_bottom = 420.0
 rect_min_size = Vector2( 385, 240 )
 mouse_filter = 2
+custom_constants/separation = 24
 alignment = 1
 
 [node name="MenuLabel" type="Label" parent="MenuBody/VBoxContainer"]
-margin_top = 31.0
+margin_top = 21.0
 margin_right = 385.0
-margin_bottom = 45.0
+margin_bottom = 35.0
 text = "Menu Label"
 align = 1
 valign = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MenuBody/VBoxContainer"]
-margin_top = 49.0
+margin_top = 59.0
 margin_right = 385.0
-margin_bottom = 209.0
+margin_bottom = 219.0
 grow_horizontal = 2
 grow_vertical = 0
 rect_min_size = Vector2( 385, 160 )
