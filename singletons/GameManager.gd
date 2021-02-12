@@ -27,7 +27,7 @@ func _ready() -> void:
 
 
 func _process_transition_command() -> void:
-	if Utility.is_game_paused():
+	if get_tree().paused:
 		Utility.unpause_game()
 		
 	match transition_command:
