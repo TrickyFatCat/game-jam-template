@@ -5,7 +5,7 @@ extends BaseMenu
 
 export(String, FILE, "*.tscn") var starting_level
 
-onready var menuConfirm #:= $MenuConfirm
+onready var _confirmation_menu : Control = $ConfirmationMenu
 onready var _menu_body : CenterContainer = $MenuBody
 
 
@@ -13,8 +13,8 @@ func _ready() -> void:
 	_set_menu_buttons()
 	_set_buttons_active(false)
 	Events.connect("transition_screen_opened", self, "_activate_menu")
-	#menuConfirm.connect("yes_pressed", self, "_confirm_action")
-	#menuConfirm.connect("no_pressed", self, "_decline_action")
+	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
+	_confirmation_menu.connect("no_pressed", self, "_decline_action")
 	get_button("ButtonStart").connect("button_up", self, "_on_button_start_pressed")
 	get_button("ButtonQuit").connect("button_up", self, "_on_button_quit_pressed")
 
@@ -27,9 +27,8 @@ func _on_button_start_pressed() -> void:
 
 func _on_button_quit_pressed() -> void:
 	_switch_menu_visibility(false)
-	Events.emit_signal("quit_game")
-	#menuConfirm.open_menu()
-	#action_to_confirm = Actions.QUIT_GAME
+	action_to_confirm = Actions.QUIT_GAME
+	_confirmation_menu.open_menu()
 
 
 func _activate_menu() -> void:
