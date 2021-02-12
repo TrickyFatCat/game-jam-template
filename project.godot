@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Levels/BaseLevel.gd"
 }, {
+"base": "Node",
+"class": "BaseResource",
+"language": "GDScript",
+"path": "res://src/BaseResource/BaseResource.gd"
+}, {
+"base": "Area2D",
+"class": "BaseTrigger",
+"language": "GDScript",
+"path": "res://src/BaseTrigger/BaseTrigger.gd"
+}, {
 "base": "Position2D",
 "class": "CameraController",
 "language": "GDScript",
@@ -41,6 +51,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
+"BaseResource": "",
+"BaseTrigger": "",
 "CameraController": "",
 "Entity": "",
 "Player": "",
