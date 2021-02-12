@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var _hud : Control 
+onready var _hud : Control = $Hud
 onready var _pause_menu : Control = $PauseMenu
 onready var _game_over_menu : Control = $GameOverMenu
 onready var _finish_menu : Control = $FinishMenu
