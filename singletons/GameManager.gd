@@ -36,7 +36,8 @@ func _process_transition_command() -> void:
 			# TODO implement level loading by ID
 			pass
 		LEVEL_RESTART:
-			# TODO implement level restart
+			# warning-ignore:return_value_discarded
+			get_tree().reload_current_scene()
 			pass
 		LEVEL_EXIT:
 			LevelController.load_main_menu()
