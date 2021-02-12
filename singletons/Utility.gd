@@ -15,10 +15,6 @@ static func get_direction_to_player(target: Node2D) -> Vector2:
 
 static func get_distance_to_player(target: Node2D) -> float:
 	return get_player_position().distance_to(target.global_position)
-	
-
-func is_game_paused() -> bool:
-	return get_tree().paused
 
 
 func pause_game() -> void:

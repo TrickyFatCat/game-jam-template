@@ -15,6 +15,7 @@ var _default_volume : float
 
 
 func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 	_fade_tween = Utility.create_new_tween(self, "FadeTween")
 	_fade_tween.connect("tween_all_completed", self, "_on_fade_ended")
 	_default_volume = volume_db

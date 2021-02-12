@@ -1,13 +1,19 @@
 extends Node
 
-const MAIN_MENU_PATH : String = "res://levels/Menus/MainMenu.tscn"
 const LEVELS : Array = [
 	"res://levels/splash/SplashScreenGodot.tscn",
 	"res://levels/splash/SplashScreenJam.tscn",
-	"res://levels/splash/SplashScreenTeam.tscn"
+	"res://levels/splash/SplashScreenTeam.tscn",
+	"res://levels/menus/MainMenuLevel.tscn",
+	"res://levels/game/TestLevel.tscn"
 ]
+const MAIN_MENU_ID : int = 3
 
 var current_level_id : int = 0
+
+
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 
 func load_level_by_id(id: int) -> void:
 	if id < 0 or id >= LEVELS.size():
@@ -18,7 +24,7 @@ func load_level_by_id(id: int) -> void:
 
 
 func load_main_menu() -> void:
-	# get_tree().change_scene(MAIN_MENU_PATH)
+	load_level_by_id(MAIN_MENU_ID)
 	pass
 
 
@@ -31,4 +37,5 @@ func load_next_level() -> void:
 		return;
 
 	get_tree().change_scene(LEVELS[new_level_id])
+	current_level_id += 1
 	pass

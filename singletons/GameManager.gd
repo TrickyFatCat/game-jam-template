@@ -11,7 +11,8 @@ var player : Player
 var transition_command : String
 
 
-func _ready() -> void:
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 # warning-ignore:return_value_discarded
 	Events.connect("load_level", self, "_start_level_loading")
 # warning-ignore:return_value_discarded
@@ -27,7 +28,7 @@ func _ready() -> void:
 
 
 func _process_transition_command() -> void:
-	if Utility.is_game_paused():
+	if get_tree().paused:
 		Utility.unpause_game()
 		
 	match transition_command:
@@ -36,7 +37,8 @@ func _process_transition_command() -> void:
 			# TODO implement level loading by ID
 			pass
 		LEVEL_RESTART:
-			# TODO implement level restart
+			# warning-ignore:return_value_discarded
+			get_tree().reload_current_scene()
 			pass
 		LEVEL_EXIT:
 			LevelController.load_main_menu()
