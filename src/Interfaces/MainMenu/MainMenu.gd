@@ -6,7 +6,6 @@ extends BaseMenu
 export(String, FILE, "*.tscn") var starting_level
 
 onready var _confirmation_menu : Control = $ConfirmationMenu
-onready var _menu_body : CenterContainer = $MenuBody
 
 
 func _ready() -> void:
@@ -43,13 +42,3 @@ func _confirm_action() -> void:
 
 func _decline_action() -> void:
 	_switch_menu_visibility(true)
-
-
-func _switch_menu_visibility(is_visible: bool) -> void:
-	_menu_body.visible = is_visible
-	_set_buttons_active(is_visible)
-
-	if is_visible:
-		_focus_first_button()
-	else:
-		_release_focus()

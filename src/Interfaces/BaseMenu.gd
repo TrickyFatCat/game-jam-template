@@ -18,6 +18,8 @@ export(bool) var is_active := true setget _set_is_active
 var menu_buttons : Array
 var action_to_confirm : int
 
+onready var _menu_body : CenterContainer = $MenuBody
+
 
 func open_menu() -> void:
 	self.is_active = true
@@ -27,6 +29,10 @@ func open_menu() -> void:
 func close_menu() -> void:
 	self.is_active = false
 	_release_focus()
+
+
+func get_button(button_name: String) -> Node:
+	return get_node("MenuBody/VBoxContainer/Buttons/%s" % button_name)
 
 
 func _set_menu_buttons() -> void:
@@ -74,5 +80,11 @@ func _decline_action() -> void:
 	pass
 
 
-func get_button(button_name: String) -> Node:
-	return get_node("MenuBody/VBoxContainer/Buttons/%s" % button_name)
+func _switch_menu_visibility(is_visible: bool) -> void:
+	_menu_body.visible = is_visible
+	_set_buttons_active(is_visible)
+
+	if is_visible:
+		_focus_first_button()
+	else:
+		_release_focus()
