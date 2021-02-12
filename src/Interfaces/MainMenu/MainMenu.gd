@@ -14,7 +14,6 @@ func ready() -> void:
 
 func _on_button_start_pressed() -> void:
 	_set_buttons_active(false)
-	print_debug("start_game")
 	Events.emit_signal("load_level", {"target_level": "next"})
 
 

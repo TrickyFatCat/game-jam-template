@@ -11,7 +11,8 @@ var player : Player
 var transition_command : String
 
 
-func _ready() -> void:
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 # warning-ignore:return_value_discarded
 	Events.connect("load_level", self, "_start_level_loading")
 # warning-ignore:return_value_discarded

@@ -3,6 +3,9 @@ extends Node
 var game_data = "res://game_data.bin" # TODO Switch to user directory
 
 
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
+
 func _ready() -> void:
 	pass
 

@@ -9,6 +9,8 @@ var available : Array = []  # The available players.
 
 var queue : Array = []  # The queue of sounds to play.
 
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
 
 func _ready() -> void:
 	# Create the pool of AudioStreamPlayer nodes.

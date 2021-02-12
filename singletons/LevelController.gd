@@ -12,6 +12,9 @@ const MAIN_MENU_ID : int = 3
 var current_level_id : int = 0
 
 
+func _init() -> void:
+	pause_mode = PAUSE_MODE_PROCESS
+
 func load_level_by_id(id: int) -> void:
 	if id < 0 or id >= LEVELS.size():
 		push_error("Level id %i hasn't been found. Level loading aborted" % id)
