@@ -29,8 +29,8 @@ func close_menu() -> void:
 	_release_focus()
 
 
-func _set_menu_buttons(menu_node: Control) -> void:
-	menu_buttons = menu_node.get_children()
+func _set_menu_buttons() -> void:
+	menu_buttons = $MenuBody/VBoxContainer/Buttons.get_children()
 
 
 func _set_is_active(value: bool) -> void:
@@ -72,3 +72,7 @@ func _decline_action() -> void:
 	#* Write logic on action confirmation
 	#* Requires using menu confirmation node
 	pass
+
+
+func get_button(button_name: String) -> Node:
+	return get_node("MenuBody/VBoxContainer/Buttons/%s" % button_name)
