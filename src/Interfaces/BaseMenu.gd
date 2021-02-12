@@ -17,8 +17,15 @@ export(bool) var is_active := true setget _set_is_active
 
 var menu_buttons : Array
 var action_to_confirm : int
+var _confirmation_menu : Control
 
 onready var _menu_body : CenterContainer = $MenuBody
+
+
+func _init() -> void:
+	_confirmation_menu = $ConfirmationMenu
+	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
+	_confirmation_menu.connect("no_pressed", self, "_decline_action")
 
 
 func open_menu() -> void:
@@ -88,3 +95,9 @@ func _switch_menu_visibility(is_visible: bool) -> void:
 		_focus_first_button()
 	else:
 		_release_focus()
+
+
+func _show_confirmation_menu(action_id: int) -> void:
+	_switch_menu_visibility(false)
+	_confirmation_menu.open_menu()
+	action_to_confirm = action_id

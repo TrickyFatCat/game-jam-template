@@ -5,15 +5,11 @@ extends BaseMenu
 
 export(String, FILE, "*.tscn") var starting_level
 
-onready var _confirmation_menu : Control = $ConfirmationMenu
-
 
 func _ready() -> void:
 	_set_menu_buttons()
 	_set_buttons_active(false)
 	Events.connect("transition_screen_opened", self, "_activate_menu")
-	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
-	_confirmation_menu.connect("no_pressed", self, "_decline_action")
 	get_button("ButtonStart").connect("button_up", self, "_on_button_start_pressed")
 	get_button("ButtonQuit").connect("button_up", self, "_on_button_quit_pressed")
 
