@@ -5,7 +5,11 @@
 [ext_resource path="res://src/Interfaces/PauseMenu/PauseMenu.gd" type="Script" id=3]
 
 [node name="PauseMenu" instance=ExtResource( 1 )]
+pause_mode = 2
 script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0, 0, 0, 0.509804 )
 
 [node name="MenuLabel" parent="MenuBody/VBoxContainer" index="0"]
 text = "Pause"

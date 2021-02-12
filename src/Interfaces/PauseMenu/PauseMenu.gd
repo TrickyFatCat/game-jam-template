@@ -20,13 +20,14 @@ func _on_resume_up() -> void:
 	Utility.unpause_game()
 
 
-func _on_restart_pressed() ->  void:
+func _on_restart_up() ->  void:
+	_show_confirmation_menu(Actions.LEVEL_RESTART)
 	emit_signal("restart_pressed")
 
 
 func _on_exit_up() -> void:
-	_show_confirmation_menu(Actions.LEVEL_EXIT)
 	emit_signal("exit_pressed")
+	_show_confirmation_menu(Actions.LEVEL_EXIT)
 	
 
 func _confirm_action() -> void:
