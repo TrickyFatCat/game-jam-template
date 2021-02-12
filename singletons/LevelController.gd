@@ -4,7 +4,8 @@ const LEVELS : Array = [
 	"res://levels/splash/SplashScreenGodot.tscn",
 	"res://levels/splash/SplashScreenJam.tscn",
 	"res://levels/splash/SplashScreenTeam.tscn",
-	"res://levels/menus/MainMenuLevel.tscn"
+	"res://levels/menus/MainMenuLevel.tscn",
+	"res://levels/game/TestLevel.tscn"
 ]
 const MAIN_MENU_ID : int = 3
 
