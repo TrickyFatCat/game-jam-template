@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://src/StateMachine/StateMachine.gd"
+}, {
+"base": "Button",
+"class": "TextButton",
+"language": "GDScript",
+"path": "res://src/Interfaces/TextButton/TextButton.gd"
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "Entity": "",
 "Player": "",
 "State": "res://assets/engine_icons/icon_state.svg",
-"StateMachine": "res://assets/engine_icons/icon_stateMachine.svg"
+"StateMachine": "res://assets/engine_icons/icon_stateMachine.svg",
+"TextButton": ""
 }
 
 [application]
