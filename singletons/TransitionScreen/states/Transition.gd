@@ -1,10 +1,12 @@
 extends State
 
 
+# warning-ignore:unused_argument
 func unhandled_input(event: InputEvent) -> void:
 	return
 
 
+# warning-ignore:unused_argument
 func enter(msg: Dictionary = {}) -> void:
 	Events.emit_signal("transition_started")
 	return

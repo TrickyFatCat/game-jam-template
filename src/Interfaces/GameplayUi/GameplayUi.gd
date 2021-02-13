@@ -10,6 +10,7 @@ onready var _finish_menu : Control = $FinishMenu
 func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
 		if TransitionScreen.is_transitionig():
+# warning-ignore:return_value_discarded
 			Events.connect("transition_screen_opened", self, "_open_pause_menu", [], CONNECT_ONESHOT)
 		elif not _game_over_menu.is_active or not _finish_menu.is_active:
 			_open_pause_menu()
@@ -25,10 +26,14 @@ func _input(event: InputEvent) -> void:
 			
 
 func _ready() -> void:
+	# warning-ignore:return_value_discarded
 	Events.connect("restart_level", self, "_deactivate_input")    
+	# warning-ignore:return_value_discarded
 	Events.connect("level_exit", self, "_deactivate_input")   
+	# warning-ignore:return_value_discarded
 	Events.connect("level_finished", self, "_open_finish_menu")
-	Events.connect("player_dead", self, "_open_gameover_menu")
+	# warning-ignore:return_value_discarded
+	Events.connect("level_failed", self, "_open_gameover_menu")
 
 
 func _deactivate_input() -> void:

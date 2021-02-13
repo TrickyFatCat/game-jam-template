@@ -2,13 +2,17 @@
 
 extends BaseMenu
 
+# warning-ignore:unused_signal
 signal restart_pressed
+# warning-ignore:unused_signal
 signal exit_pressed
 
 
 func ready() -> void:
 	_set_buttons_active(is_active)
+	# warning-ignore:return_value_discarded
 	get_button("ButtonNext").connect("button_up", self, "_button_next_pressed")
+	# warning-ignore:return_value_discarded
 	get_button("ButtonExit").connect("button_up", self, "_button_exit_pressed")
 	_connect_to_confirmation_menu()
 

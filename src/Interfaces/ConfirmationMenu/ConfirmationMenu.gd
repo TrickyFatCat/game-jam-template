@@ -7,7 +7,9 @@ signal no_pressed
 
 
 func ready() -> void:
+	# warning-ignore:return_value_discarded
 	get_button("Yes").connect("button_up", self, "_on_yes_pressed")
+	# warning-ignore:return_value_discarded
 	get_button("No").connect("button_up", self, "_on_no_pressed")
 
 

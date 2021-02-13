@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 
 		joy_id_current = event.device
 		current_input_device = InputDevice.GAMEPAD
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		# Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Uncomment this if you want to capture mouse
 		Events.emit_signal("input_device_changed", current_input_device)
 		return
 

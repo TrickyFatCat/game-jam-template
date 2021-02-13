@@ -6,8 +6,11 @@ extends BaseMenu
 
 func ready() -> void:
 	_set_buttons_active(false)
+	# warning-ignore:return_value_discarded
 	Events.connect("transition_screen_opened", self, "_activate_menu")
+	# warning-ignore:return_value_discarded
 	get_button("ButtonStart").connect("button_up", self, "_on_button_start_pressed")
+	# warning-ignore:return_value_discarded
 	get_button("ButtonQuit").connect("button_up", self, "_on_button_quit_pressed")
 	_connect_to_confirmation_menu()
 

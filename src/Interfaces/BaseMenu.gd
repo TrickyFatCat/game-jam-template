@@ -4,7 +4,9 @@
 class_name BaseMenu
 extends Control
 
+# warning-ignore:unused_signal
 signal deactivated
+# warning-ignore:unused_signal
 signal activated
 
 enum Actions {
@@ -56,6 +58,7 @@ func _set_is_active(value: bool) -> void:
 	_on_change_is_active(value)
 
 
+# warning-ignore:unused_argument
 func _on_change_is_active(value: bool) -> void:
 	#* Write additional logic on activation here
 	pass
@@ -109,5 +112,7 @@ func _show_confirmation_menu(action_id: int) -> void:
 # This method helps to avoid cyclic calls
 func _connect_to_confirmation_menu() -> void:
 	_confirmation_menu = $ConfirmationMenu
+	# warning-ignore:return_value_discarded
 	_confirmation_menu.connect("yes_pressed", self, "_confirm_action")
+	# warning-ignore:return_value_discarded
 	_confirmation_menu.connect("no_pressed", self, "_decline_action")

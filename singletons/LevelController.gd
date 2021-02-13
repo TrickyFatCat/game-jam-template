@@ -20,6 +20,7 @@ func load_level_by_id(id: int) -> void:
 		push_error("Level id %i hasn't been found. Level loading aborted" % id)
 		return
 	
+	# warning-ignore:return_value_discarded
 	get_tree().change_scene(LEVELS[id])
 
 
@@ -36,6 +37,7 @@ func load_next_level() -> void:
 		load_main_menu()
 		return;
 
+	# warning-ignore:return_value_discarded
 	get_tree().change_scene(LEVELS[new_level_id])
 	current_level_id += 1
 	pass

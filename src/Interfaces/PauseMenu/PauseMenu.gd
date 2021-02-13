@@ -8,8 +8,11 @@ signal exit_pressed
 
 
 func ready() -> void:
+	# warning-ignore:return_value_discarded
 	get_button("ButtonResume").connect("button_up", self, "_on_resume_up")
+	# warning-ignore:return_value_discarded
 	get_button("ButtonRestart").connect("button_up", self, "_on_restart_up")
+	# warning-ignore:return_value_discarded
 	get_button("ButtonExit").connect("button_up", self, "_on_exit_up")
 	_connect_to_confirmation_menu()
 

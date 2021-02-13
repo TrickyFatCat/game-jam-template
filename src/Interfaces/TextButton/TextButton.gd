@@ -19,12 +19,19 @@ onready var _button_label : Label = $ButtonLabel
 
 
 func _init() -> void:
+	# warning-ignore:return_value_discarded
 	connect("mouse_entered", self, "_on_mouse_enter")
+	# warning-ignore:return_value_discarded
 	connect("mouse_exited", self, "_on_mouse_exit")
+	# warning-ignore:return_value_discarded
 	connect("focus_entered", self, "_on_focus_entered")
+	# warning-ignore:return_value_discarded
 	connect("focus_exited", self, "_on_focus_exited")
+	# warning-ignore:return_value_discarded
 	connect("button_down", self, "_on_button_down")
+	# warning-ignore:return_value_discarded
 	connect("button_up", self, "_on_button_up")
+	# warning-ignore:return_value_discarded
 	Events.connect("input_device_changed", self, "_switch_mouse_filter")
 
 

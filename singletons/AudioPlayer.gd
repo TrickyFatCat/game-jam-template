@@ -18,6 +18,7 @@ func _ready() -> void:
 		var audio_player := AudioStreamPlayer.new()
 		add_child(audio_player)
 		available.append(audio_player)
+		# warning-ignore:return_value_discarded
 		audio_player.connect("finished", self, "_on_stream_finished", [audio_player])
 		audio_player.bus = bus
 
@@ -31,6 +32,7 @@ func play(sound_path: String) -> void:
 	queue.append(sound_path)
 
 
+# warning-ignore:unused_argument
 func _process(delta: float) -> void:
 	# Play a queued sound if any players are available.
 	if not queue.empty() and not available.empty():

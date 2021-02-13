@@ -17,6 +17,7 @@ var _default_volume : float
 func _init() -> void:
 	pause_mode = PAUSE_MODE_PROCESS
 	_fade_tween = Utility.create_new_tween(self, "FadeTween")
+	# warning-ignore:return_value_discarded
 	_fade_tween.connect("tween_all_completed", self, "_on_fade_ended")
 	_default_volume = volume_db
 	set_volume(0.0)
@@ -58,6 +59,7 @@ func _fade_out(fade_time: float = DEFAULT_FADE_TIME) -> void:
 
 
 func _start_tween(initial_value: float, target_value: float, fade_time : float) -> void:
+	# warning-ignore:return_value_discarded
 	_fade_tween.interpolate_method(
 		self,
 		"set_volume",
@@ -67,4 +69,5 @@ func _start_tween(initial_value: float, target_value: float, fade_time : float) 
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
+	# warning-ignore:return_value_discarded
 	_fade_tween.start()
