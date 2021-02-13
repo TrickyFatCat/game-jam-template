@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Interfaces/GameplayUi/GameplayUi.gd" type="Script" id=1]
+[ext_resource path="res://src/Interfaces/PauseMenu/PauseMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Interfaces/GameOverMenu/GameOverMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Interfaces/FinishMenu/FinishMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Interfaces/Hud/Hud.tscn" type="PackedScene" id=5]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Hud" parent="." instance=ExtResource( 5 )]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 2 )]
+is_active = false
+
+[node name="GameOverMenu" parent="." instance=ExtResource( 3 )]
+is_active = false
+
+[node name="FinishMenu" parent="." instance=ExtResource( 4 )]
+is_active = false

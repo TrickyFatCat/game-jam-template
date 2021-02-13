@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://materials/transition/mat_transition.tres" type="Material" id=1]
+[ext_resource path="res://src/StateMachine/StateMachine.gd" type="Script" id=2]
+[ext_resource path="res://src/StateMachine/State.gd" type="Script" id=3]
+[ext_resource path="res://singletons/TransitionScreen/TransitionScreen.gd" type="Script" id=4]
+[ext_resource path="res://singletons/TransitionScreen/states/Transition.gd" type="Script" id=6]
+
+[node name="TransitionScreen" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+initial_state = NodePath("Closed")
+
+[node name="Opened" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )
+
+[node name="Closed" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )
+
+[node name="Transition" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
