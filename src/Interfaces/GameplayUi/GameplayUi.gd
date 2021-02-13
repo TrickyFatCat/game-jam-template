@@ -11,7 +11,7 @@ func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
 		if TransitionScreen.is_transitionig():
 			Events.connect("transition_screen_opened", self, "_open_pause_menu", [], CONNECT_ONESHOT)
-		elif not _game_over_menu.is_active:
+		elif not _game_over_menu.is_active or not _finish_menu.is_active:
 			_open_pause_menu()
 
 
@@ -27,8 +27,8 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	Events.connect("restart_level", self, "_deactivate_input")    
 	Events.connect("level_exit", self, "_deactivate_input")   
-	Events.connect("level_finished", self, "_deactivate_input")
-	Events.connect("player_dead", self, "_open_menu_gameover")
+	Events.connect("level_finished", self, "_open_finish_menu")
+	Events.connect("player_dead", self, "_open_gameover_menu")
 
 
 func _deactivate_input() -> void:
@@ -49,7 +49,7 @@ func _close_pause_menu() -> void:
 	Events.emit_signal("close_menu_pause")
 
 
-func _open_menu_gameover() -> void:
+func _open_gover_menu() -> void:
 	_game_over_menu.open_menu()
 	_hud.is_active = false
 	set_process_input(false)

@@ -25,7 +25,7 @@ func load_level_by_id(id: int) -> void:
 
 func load_main_menu() -> void:
 	load_level_by_id(MAIN_MENU_ID)
-	pass
+	current_level_id = MAIN_MENU_ID
 
 
 func load_next_level() -> void:
