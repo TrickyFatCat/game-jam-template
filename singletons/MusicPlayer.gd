@@ -45,10 +45,10 @@ func play_random_track(tracks, fade_time : float = DEFAULT_FADE_TIME, track_volu
 	if tracks.empty():
 		return
 	elif tracks.size() == 1:
-		var track = load(tracks[0])
+		var track = tracks[0]
 		play_track(track, fade_time, track_volume)
 	else:
-		var track = load(tracks[randi() % tracks.size()])
+		var track = tracks[randi() % tracks.size()]
 		play_track(track, fade_time, track_volume)
 
 
