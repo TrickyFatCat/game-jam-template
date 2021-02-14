@@ -41,6 +41,17 @@ func play_track(track : AudioStream, fade_time : float = DEFAULT_FADE_TIME, trac
 	_fade_in(fade_time)
 
 
+func play_random_track(tracks, fade_time : float = DEFAULT_FADE_TIME, track_volume : float = _default_volume) -> void:
+	if tracks.empty():
+		return
+	elif tracks.size() == 1:
+		var track = load(tracks[0])
+		play_track(track, fade_time, track_volume)
+	else:
+		var track = load(tracks[randi() % tracks.size()])
+		play_track(track, fade_time, track_volume)
+
+
 func stop_track(fade_time : float = DEFAULT_FADE_TIME) -> void:
 	_fade_out(fade_time)
 
