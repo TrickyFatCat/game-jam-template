@@ -1,4 +1,3 @@
-
 #* This singleton controlling current active input device.
 #* It needs for changing HUD icons and for controlling player aiming and camera.
 

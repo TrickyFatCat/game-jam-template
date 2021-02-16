@@ -63,10 +63,12 @@ alignment = 1
 margin_left = 139.0
 margin_right = 172.0
 margin_bottom = 48.0
+focus_mode = 0
 text = "YES"
 
 [node name="No" parent="MenuBody/VBoxContainer/Buttons" instance=ExtResource( 2 )]
 margin_left = 212.0
 margin_right = 245.0
 margin_bottom = 48.0
+focus_mode = 0
 text = "NO"
