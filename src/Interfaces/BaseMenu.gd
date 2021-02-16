@@ -48,7 +48,16 @@ func get_button(button_name: String) -> Node:
 
 
 func _set_menu_buttons() -> void:
-	menu_buttons = $MenuBody/VBoxContainer/Buttons.get_children()
+	var buttons_container = $MenuBody/VBoxContainer/Buttons
+	menu_buttons = buttons_container.get_children()
+	var last_button_index = menu_buttons.size() - 1
+	
+	if buttons_container is VBoxContainer:
+		menu_buttons[0].focus_neighbour_top = menu_buttons[last_button_index].get_path()
+		menu_buttons[last_button_index].focus_neighbour_bottom = menu_buttons[0].get_path()
+	elif buttons_container is HBoxContainer:
+		menu_buttons[0].focus_neighbour_left = menu_buttons[last_button_index].get_path()
+		menu_buttons[last_button_index].focus_neighbour_right = menu_buttons[0].get_path()
 
 
 func _set_is_active(value: bool) -> void:
@@ -62,6 +71,7 @@ func _set_is_active(value: bool) -> void:
 func _on_change_is_active(value: bool) -> void:
 	#* Write additional logic on activation here
 	pass
+
 
 func _set_buttons_active(value: bool) -> void:
 	for button in menu_buttons:

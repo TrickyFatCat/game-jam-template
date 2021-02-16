@@ -13,6 +13,7 @@ color = Color( 0.117647, 0.164706, 0.486275, 1 )
 [node name="ButtonStart" parent="MenuBody/VBoxContainer/Buttons" index="0" instance=ExtResource( 2 )]
 margin_right = 385.0
 rect_min_size = Vector2( 385, 40 )
+focus_neighbour_top = NodePath("/root/EditorNode/@@592/@@593/@@601/@@603/@@607/@@611/@@612/@@613/@@629/@@630/@@639/@@640/@@6339/@@6178/@@6179/@@6180/@@6181/@@6182/MainMenu/MenuBody/VBoxContainer/Buttons/ButtonQuit")
 text = "START"
 
 [node name="ButtonQuit" parent="MenuBody/VBoxContainer/Buttons" index="1" instance=ExtResource( 2 )]
@@ -20,4 +21,5 @@ margin_top = 44.0
 margin_right = 385.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 385, 40 )
+focus_neighbour_bottom = NodePath("/root/EditorNode/@@592/@@593/@@601/@@603/@@607/@@611/@@612/@@613/@@629/@@630/@@639/@@640/@@6339/@@6178/@@6179/@@6180/@@6181/@@6182/MainMenu/MenuBody/VBoxContainer/Buttons/ButtonStart")
 text = "QUIT"
