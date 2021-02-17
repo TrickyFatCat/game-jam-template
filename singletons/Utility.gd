@@ -17,6 +17,29 @@ static func get_distance_to_player(target: Node2D) -> float:
 	return get_player_position().distance_to(target.global_position)
 
 
+static func get_random_index(array: Array) -> int:
+	return randi() % array.size()
+
+
+static func get_random_index_weight(array_of_weights: Array) -> int:
+	var weight_sum = 0
+	var weight_total = 0
+	var result
+	
+	for i in array_of_weights.size():
+		weight_sum += array_of_weights[i]
+	
+	var dice_roll = randi() % weight_sum + 1
+	
+	for i in array_of_weights.size():
+		weight_total += array_of_weights[i]
+		
+		if dice_roll <= array_of_weights[i]:
+			result = i
+	
+	return result
+
+
 func pause_game() -> void:
 	get_tree().paused = true
 
