@@ -40,6 +40,25 @@ static func get_random_index_weight(array_of_weights: Array) -> int:
 	return result
 
 
+# Converts given time in seconds in mm:ss:msms format
+static func convert_time(time: float) -> String:
+	var minutes = time / 60
+	var seconds = int(time) % 60
+	var miliseconds = int(fmod(time, seconds) * 1000)
+
+	if seconds < 1:
+		seconds = int(time + 1) % 60
+		miliseconds = int(fmod(time, seconds) * 1000)
+		seconds = 0
+
+	if miliseconds < 0:
+		minutes = 0
+		seconds = 0
+		miliseconds = 0
+	
+	return "%02d:%02d.%03d" % [minutes, seconds, miliseconds]
+
+
 func pause_game() -> void:
 	get_tree().paused = true
 
