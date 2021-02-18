@@ -1,3 +1,4 @@
+# This singleton contains some useful functions
 extends Node
 
 
@@ -9,12 +10,12 @@ static func get_player_position() -> Vector2:
 	return GameManager.player.global_position
 
 
-static func get_direction_to_player(target: Node2D) -> Vector2:
-	return (get_player_position() - target.global_position).normalized()
+static func get_direction_to_object(initial_object: Node2D, target_object: Node2D) -> Vector2:
+	return (initial_object.global_position - target_object.global_position).normalized()
 
 
-static func get_distance_to_player(target: Node2D) -> float:
-	return get_player_position().distance_to(target.global_position)
+static func get_distance_to_oject(initial_object: Node2D, target_object: Node2D) -> float:
+	return initial_object.global_position.distance_to(target_object.global_position)
 
 
 static func get_random_index(array: Array) -> int:
