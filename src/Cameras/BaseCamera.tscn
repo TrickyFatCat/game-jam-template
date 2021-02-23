@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Cameras/CameraShaker.gd" type="Script" id=1]
+
+[node name="CameraRig" type="Position2D"]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+
+[node name="CameraShaker" type="Node" parent="PlayerCamera"]
+script = ExtResource( 1 )

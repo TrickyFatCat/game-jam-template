@@ -6,6 +6,8 @@ signal target_exited()
 signal trigger_activated()
 signal trigger_deactivated()
 
+const INTERACTION_ACTION : String = "interact" # Change this constant if you your action has a different name
+
 export(bool) var is_oneshot := false
 export(bool) var is_interactable := false
 
@@ -27,7 +29,7 @@ func _init() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if is_interactable and _is_target_inside and event.is_action_pressed("interact"):
+	if is_interactable and _is_target_inside and event.is_action_pressed(INTERACTION_ACTION): 
 		if not _is_activated:
 			_activate_trigger()
 		else:
