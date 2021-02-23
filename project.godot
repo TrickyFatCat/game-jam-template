@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Position2D",
+"class": "BaseCamera",
+"language": "GDScript",
+"path": "res://src/Cameras/BaseCamera.gd"
+}, {
 "base": "Node",
 "class": "BaseLevel",
 "language": "GDScript",
@@ -29,15 +34,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/BaseTrigger/BaseTrigger.gd"
 }, {
-"base": "Position2D",
-"class": "CameraController",
-"language": "GDScript",
-"path": "res://src/PlayerCamera/CameraController.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
 "path": "res://src/Entities/Entity.gd"
+}, {
+"base": "BaseCamera",
+"class": "GridCamera",
+"language": "GDScript",
+"path": "res://src/Cameras/GridCamera/GridCamera.gd"
 }, {
 "base": "Control",
 "class": "Hud",
@@ -48,6 +53,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Entities/Player/Player.gd"
+}, {
+"base": "BaseCamera",
+"class": "ShooterCamera",
+"language": "GDScript",
+"path": "res://src/Cameras/ShooterCamera/ShooterCamera.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -65,14 +75,16 @@ _global_script_classes=[ {
 "path": "res://src/Interfaces/TextButton/TextButton.gd"
 } ]
 _global_script_class_icons={
+"BaseCamera": "",
 "BaseLevel": "",
 "BaseMenu": "",
 "BaseResource": "",
 "BaseTrigger": "",
-"CameraController": "",
 "Entity": "",
+"GridCamera": "",
 "Hud": "",
 "Player": "",
+"ShooterCamera": "",
 "State": "res://assets/engine_icons/icon_state.svg",
 "StateMachine": "res://assets/engine_icons/icon_stateMachine.svg",
 "TextButton": ""
